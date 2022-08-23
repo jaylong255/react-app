@@ -1,0 +1,21 @@
+version: '3.5'
+services:
+  node:
+    build: 
+      context: ./
+      dockerfile: docker/Dockerfile  
+    container_name: ${PROJECT_NAME}-node
+    volumes:
+      - ./:/app
+    ports:
+      - '3000:3000'
+    command:
+      - npm
+      - start
+    networks:
+      - frontend
+    restart: always
+
+networks:
+  frontend:
+    driver: bridge
