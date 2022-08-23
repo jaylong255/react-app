@@ -9,6 +9,7 @@ The docker setup in this repository sets up a local development environment that
 
 ## Build the App
 Build your assets by running node commands on the node docker image that is packaged in with this codebase. This will assure that everyone working on the app is using the same software versions and configuration as each other as well as the deployment pipeline and environments running in the cloud. Do not simply run node commands from your native node installation.
+
 `docker-compose run node npm run build`
 
 Note: the bucket name and distribution id values are output from the terraform modules for convenience. 
