@@ -1,14 +1,22 @@
-# Cloud Infrastructure
-The infrastructure stack that deploys this app is launched by terraform code here https://github.com/jaylong255/infrastructure and here https://github.com/jaylong255/terraform-modules
+# React App
+
+## Terraform Modules
+The minimum infrastructure requirements for this app are described by Terraform code in this repository. A working stack can be launched to the cloud from this codebase.
+
+## Docker and Docker Compose Files
+The docker setup in this repository sets up a local development environment that can also be used in deployment pipelines.
+
 
 ## Build the App
 `docker-compose run node npm run build`
 
+Note: the bucket name and distribution id values are output from the terraform modules for convenience. 
+
 ## Push assets to the Bucket
-`aws s3 sync build/ s3://my-bucket-name`   
+`aws s3 sync build/ s3://$BUCKET_NAME`   
 
 ## Invalidate the CDN Distribution
-
+`aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /*`
 
 # Getting Started with Create React App
 
