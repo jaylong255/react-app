@@ -1,3 +1,15 @@
+# Cloud Infrastructure
+The infrastructure stack that deploys this app is launched by terraform code here https://github.com/jaylong255/infrastructure and here https://github.com/jaylong255/terraform-modules
+
+## Build the App
+`docker-compose run node npm run build`
+
+## Push assets to the Bucket
+`aws s3 sync build/ s3://my-bucket-name`   
+
+## Invalidate the CDN Distribution
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
