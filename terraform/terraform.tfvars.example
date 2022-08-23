@@ -1,0 +1,4 @@
+stack_name = "yourstackname"
+region = "us-east-1"
+env = "dev"
+app = "reactapp"
